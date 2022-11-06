@@ -1,0 +1,355 @@
+.main-container {
+  .nav {
+    @include autoMargin;
+
+    max-width: 1170px;
+    padding: 0 rem(30px);
+
+    @include mobile {
+      padding: 0;
+    }
+
+    &__category {
+      &__list {
+        @include flexbox;
+
+        border-bottom: 1px solid $border-gray2;
+
+        @include mobile {
+          margin: 0;
+        }
+      }
+
+      &__item {
+        @include flexbox($items: center);
+
+        width: 60px;
+        height: 65px;
+
+        @include mobile {
+          height: 40px;
+          justify-content: center;
+        }
+
+        &:hover {
+          color: $secondary-font;
+        }
+
+        &.is-selected {
+          color: $primary-color;
+          font-weight: 700;
+        }
+      }
+
+      &__link {
+        display: block;
+        font-size: rem(24px);
+
+        @include mobile {
+          font-size: rem(16px);
+        }
+      }
+    }
+
+    &__genre {
+      &__list {
+        @include flexbox;
+
+        width: 100%;
+        padding: rem(10px) 0;
+        height: 52px;
+
+        @include mobile {
+          padding: rem(10px);
+          font-size: rem(14px);
+        }
+      }
+
+      &__item {
+        @include flexCenter;
+
+        width: 51px;
+        height: 100%;
+        margin-right: rem(10px);
+
+        @include mobile {
+          margin: 0 rem(3px);
+        }
+
+        &:hover {
+          color: $secondary-font;
+        }
+
+        &.is-selected {
+          color: $white;
+          background: $primary-color;
+          border-radius: 40px;
+        }
+      }
+    }
+  }
+
+  .main {
+    @include autoMargin;
+
+    max-width: 1170px;
+
+    .new-arrival {
+      margin: rem(30px) rem(30px) 0;
+
+      @include mobile {
+        margin: 0;
+      }
+
+      &__list {
+        @include flexCenter;
+
+        @include mobile {
+          @include autoMargin;
+        }
+      }
+
+      &__item {
+        text-align: center;
+        margin-right: rem(20px);
+
+        @include mobile {
+          margin-right: rem(10px);
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      &__icon {
+        @include flexCenter;
+
+        background: $gray6;
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        margin-bottom: rem(8px);
+
+        @include mobile {
+          width: 56px;
+          height: 56px;
+        }
+
+        .bx {
+          font-size: rem(24px);
+
+          @include mobile {
+            font-size: rem(18px);
+          }
+        }
+      }
+
+      &__title {
+        font-size: rem(13px);
+
+        @include mobile {
+          font-size: rem(11px);
+        }
+      }
+    }
+  }
+
+  .event {
+    margin: rem(40px) rem(30px) 0;
+
+    @include mobile {
+      margin: rem(40px) rem(18px) 0;
+    }
+
+    &__title {
+      font-weight: 700;
+      font-size: rem(24px);
+      margin-bottom: rem(30px);
+
+      @include mobile {
+        margin-bottom: rem(10px);
+      }
+    }
+
+    &__carousel {
+      position: relative;
+
+      &__list {
+        @include flexbox;
+        justify-content: space-between;
+      }
+
+      &__item {
+        border-radius: 5px;
+        width: calc(33.33% - 7px);
+        flex-shrink: 0;
+        margin: 0 3.5px;
+
+        @include tab {
+          width: calc(50% - 7px);
+        }
+
+        @include mobile {
+          width: calc(100% - 7px);
+        }
+
+        &.switch {
+          background: $event-switch;
+        }
+
+        &.up {
+          background: $event-up;
+        }
+
+        &.early {
+          background: $event-early;
+        }
+
+        &.cash {
+          background: $event-cash;
+        }
+      }
+
+      &__link {
+        @include flexbox($justify: flex-end, $items: center);
+
+        position: relative;
+      }
+
+      &__sub {
+        position: absolute;
+        left: 0;
+        margin-left: rem(24px);
+        font-size: rem(14px);
+        color: $white;
+      }
+
+      &__img {
+        width: 200px;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  .only-ridi {
+    margin: rem(40px) rem(30px) 0;
+
+    @include mobile {
+      margin: rem(40px) rem(18px) 0;
+    }
+
+    &__title {
+      font-weight: 700;
+      font-size: rem(24px);
+    }
+
+    &__carousel {
+      position: relative;
+
+      .carousel__button {
+        .prev {
+          top: 90px;
+        }
+
+        .next {
+          top: 90px;
+        }
+      }
+
+      &__list {
+        @include flexbox;
+        padding-top: rem(40px);
+      }
+
+      &__item {
+        margin: 0 3.5px;
+        width: calc(33.33% - 7px);
+        flex-shrink: 0;
+
+        @include tab {
+          width: calc(50% - 7px);
+        }
+
+        @include mobile {
+          width: calc(100% - 7px);
+        }
+      }
+
+      &__bg {
+        position: relative;
+        height: 100px;
+        border-radius: 5px;
+
+        &.bg-red {
+          background: $ridi-red;
+        }
+
+        &.bg-purple {
+          background: $ridi-purple;
+        }
+
+        &.bg-yellow {
+          background: $ridi-yellow;
+        }
+
+        &.bg-urquoise {
+          background: $ridi-turquoise;
+        }
+      }
+
+      &__img-bg {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      &__img-main {
+        @include centerTranslateX;
+
+        position: absolute;
+        bottom: 0;
+        width: 250px;
+      }
+
+      &__info {
+        @include flexbox($direction: column, $items: center);
+
+        margin-top: rem(20px);
+      }
+
+      &__title {
+        font-weight: 600;
+        margin-bottom: rem(10px);
+        text-align: center;
+      }
+
+      &__sub {
+        color: $secondary-font;
+        font-size: rem(14px);
+      }
+    }
+  }
+
+  .carousel-wrap {
+    overflow: hidden;
+  }
+
+  .carousel-list {
+    transition: transform 0.8s;
+  }
+
+  .mini-banner {
+    .carousel-list {
+      transition: transform 0.5s;
+    }
+    .carousel__button {
+      .prev {
+        left: -18px;
+      }
+      .next {
+        right: -18px;
+      }
+    }
+  }
+}

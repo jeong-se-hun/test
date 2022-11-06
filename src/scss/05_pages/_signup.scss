@@ -1,0 +1,305 @@
+$signup-icon: (
+  check:
+    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' style='fill: %2301d760;transform: ;msFilter:;'%3E%3Cpath d='m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z'%3E%3C/path%3E%3C/svg%3E",
+  error:
+    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' style='fill: %2301d760;transform: ;msFilter:;'%3E%3Cpath d='m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z'%3E%3C/path%3E%3C/svg%3E",
+);
+
+.signup {
+  width: 100%;
+  min-height: 100vh;
+  background: $bg-blue;
+  letter-spacing: -0.4px;
+
+  &__header {
+    height: 40px;
+    border-bottom: 1px solid $border-gray3;
+    text-align: center;
+    font-size: rem(19px);
+    font-weight: 700;
+    line-height: 38px;
+    color: $blue;
+  }
+
+  .link-mainpage {
+    @include paddingX(14px);
+  }
+
+  &__form {
+    @include autoMargin;
+    @include marginY(40px);
+    @include paddingX(10px);
+    @include paddingY(10px);
+
+    width: 360px;
+    font-size: rem(14px);
+  }
+
+  &__input {
+    &__area {
+      position: relative;
+      width: 340px;
+      height: 48px;
+      margin-top: rem(25px);
+
+      &:nth-child(4) {
+        margin-top: 0;
+      }
+
+      // &:focus-within .focus-text {
+      //   color: $blue;
+      //   font-size: rem(11px);
+      //   transform: translateY(-20px);
+      //   transition: all 0.2s ease;
+      // }
+    }
+
+    &__text {
+      @include centerTranslateY;
+
+      position: absolute;
+      left: 10px;
+      color: $font-gray2;
+
+      // &.hide {
+      //   display: none;
+      // }
+
+      &.focus-text {
+        color: $blue;
+        font-size: rem(11px);
+        transform: translateY(-20px);
+        transition: all 0.2s ease;
+      }
+    }
+
+    &__box {
+      width: 100%;
+      height: 100%;
+      border: 1px solid $gray2;
+      border-radius: 4px;
+      text-indent: 10px;
+
+      &:hover {
+        box-shadow: inset 0 0 1px 1px $font-skyblue;
+      }
+
+      &.is-correct {
+        background: 98% center / 6% url(map-get($signup-icon, check)) no-repeat, $white;
+      }
+
+      &[name='birth'] {
+        background-size: 12%;
+        background-position: 96% center;
+      }
+    }
+  }
+
+  &__password div:nth-child(1) input {
+    border-radius: 4px 4px 0 0;
+  }
+
+  &__password div:nth-child(2) {
+    margin-top: 0;
+
+    input {
+      border-top: 0;
+      border-radius: 0 0 4px 4px;
+    }
+  }
+
+  &__option {
+    margin-top: rem(25px);
+
+    &__title {
+      font-size: rem(12px);
+      color: $font-gray2;
+    }
+
+    &__area {
+      @include flexbox($justify: space-between, $items: center);
+
+      position: relative;
+      margin-top: rem(8px);
+
+      &__birth {
+        width: 50%;
+        height: 48px;
+
+        &:focus-within .focus-text {
+          color: $blue;
+          font-size: rem(11px);
+          transform: translateY(-20px);
+          transition: all 0.2s ease;
+        }
+      }
+
+      .user-birth {
+        width: 100%;
+        height: 100%;
+      }
+
+      &__gender {
+        width: 48%;
+        height: 48px;
+        border-radius: 4px;
+
+        button {
+          @include removeBtnStyle;
+
+          width: 50%;
+          height: 100%;
+          background: $white;
+          border-radius: 4px 0 0 4px;
+          color: $font-gray2;
+          font-size: rem(14px);
+          border: 1px solid $gray2;
+
+          &:nth-child(2) {
+            border-radius: 0 4px 4px 0;
+            border-left: 0;
+          }
+
+          &:hover {
+            box-shadow: inset 0 0 1px 0.5px $font-skyblue;
+          }
+
+          &.is-selected {
+            border: 1px solid $font-skyblue;
+            background: $bg-lightblue2;
+            pointer-events: none;
+          }
+        }
+      }
+    }
+  }
+
+  &__tos {
+    // margin-top: rem(25px);
+    width: 340px;
+    background: $white;
+    border: 1px solid $gray2;
+    border-radius: 4px;
+    font-size: rem(14px);
+    color: $font-skyblue;
+
+    label {
+      @include flexbox($items: center);
+
+      cursor: pointer;
+
+      &:hover .agreement-text {
+        color: $primary-font;
+      }
+    }
+
+    .all-agree {
+      @include paddingX(13px);
+      @include paddingY(13px);
+
+      border-bottom: 1px solid $gray2;
+      font-weight: 600;
+    }
+
+    &__list {
+      @include paddingX(13px);
+    }
+
+    &__item {
+      @include marginY(15px);
+      @include flexbox($justify: space-between, $items: center);
+    }
+
+    .check-rounded {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 1px solid $gray2;
+      border-radius: 50%;
+      margin-right: rem(6px);
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: rem(5px);
+        right: rem(4px);
+        width: rem(8px);
+        height: rem(5px);
+        transform: rotate(-45deg);
+        border-style: solid;
+        border-color: $gray2;
+        border-width: 0px 0px rem(2px) rem(2px);
+      }
+    }
+
+    [type='checkbox'] {
+      display: none;
+
+      &:checked + label .check-rounded,
+      &:checked + label .check-rounded::before {
+        border-color: $blue;
+      }
+    }
+
+    .link-more {
+      position: relative;
+      font-size: rem(12px);
+      color: $border-gray4;
+      margin-right: 10px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: -8px;
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+        width: 6px;
+        height: 6px;
+        border-style: solid;
+        border-width: rem(1px) rem(1px) 0 0;
+        border-color: $border-gray4;
+      }
+
+      &:hover {
+        color: $font-gray2;
+
+        &::after {
+          border-color: $font-gray2;
+        }
+      }
+    }
+  }
+
+  &__error-message {
+    margin: rem(4px) 0;
+    display: block;
+    padding-left: rem(4px);
+    width: 100%;
+    height: 20px;
+    color: #e64938;
+    font-size: rem(11px);
+    font-weight: 700;
+  }
+
+  .btn-submit {
+    @include removeBtnStyle;
+
+    width: 100%;
+    height: 50px;
+    background: $blue;
+    font-size: rem(16px);
+    font-weight: 600;
+    color: $white;
+    border: 1px solid $border-blue;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px 0 rgb(209 213 217 / 30%);
+    margin-top: rem(15px);
+
+    &:disabled {
+      background: $gray;
+      color: $gray0;
+      border: 1px solid $gray2;
+    }
+  }
+}

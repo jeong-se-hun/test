@@ -1,0 +1,1126 @@
+.books {
+  @include autoMargin;
+
+  max-width: 1170px;
+  min-width: 793px;
+  padding-bottom: rem(100px);
+
+  &__info {
+    @include autoMargin;
+
+    max-width: 793px;
+    padding: rem(40px) rem(29px);
+
+    // body
+    &__body {
+      @include flexbox($justify: space-between);
+
+      &__thumbnail-wrap {
+        width: 200px;
+
+        &__image {
+          display: block;
+          width: 200px;
+        }
+
+        &__preference {
+          display: block;
+          width: 130px;
+          margin: rem(16px) auto 0;
+          padding: rem(8px) 0;
+          background-color: $white;
+          border-radius: 5px;
+          border: 1px solid $gray2;
+
+          &:hover {
+            background: $border-gray2;
+          }
+
+          .button_content {
+            color: $font-gray1;
+          }
+          .bx {
+            color: $red;
+            vertical-align: middle;
+            margin-right: rem(2px);
+          }
+        }
+
+        &__notification {
+          display: block;
+          min-width: 168px;
+          padding: rem(8px) rem(8px) rem(7px) rem(8px);
+          font-size: rem(12px);
+          letter-spacing: -0.3px;
+          border-radius: 4px;
+          font-weight: 700;
+          transition: background-color 0.2s, color 0.2s;
+          color: $blue;
+          background: $white;
+          border: 1px solid $blue;
+          margin: rem(16px) auto 0;
+
+          .bx {
+            font-weight: 700;
+          }
+
+          &:hover {
+            background: $bg-blue;
+            color: $blue;
+          }
+
+          &.active {
+            color: $font-gray1;
+            border: 1px solid $border-gray4;
+
+            &:hover {
+              background: none;
+            }
+          }
+        }
+      }
+
+      &__details-wrap {
+        width: 500px;
+
+        &__title {
+          font-size: rem(30px);
+          color: $my-font-recent;
+          font-weight: 700;
+        }
+
+        &__star-rate-wrap {
+          @include flexbox($items: center);
+          @include marginY(20px);
+
+          & .star-bg {
+            margin-top: 0 !important;
+            margin-right: rem(3px);
+          }
+
+          &__score {
+            color: $accent-font;
+            font-size: rem(14px);
+            margin-right: rem(2px);
+            font-weight: 600;
+          }
+
+          &__people {
+            font-size: rem(12px);
+            font-weight: 100;
+          }
+        }
+
+        &__metadata-wrap {
+          margin: rem(20px) 0;
+          font-size: rem(13px);
+          color: $secondary-font;
+          line-height: 20px;
+
+          .font-bold {
+            font-weight: 700;
+          }
+
+          &__writer-info {
+            @include flexbox($items: center);
+
+            &__painter {
+              &::before {
+                @include marginX(6px);
+
+                content: '';
+                display: inline-block;
+                width: 1px;
+                height: 11px;
+                background-color: $gray2;
+              }
+
+              &::after {
+                @include marginX(6px);
+
+                content: '';
+                display: inline-block;
+                width: 1px;
+                height: 11px;
+                background-color: $gray2;
+              }
+            }
+          }
+
+          &__series-complete-wrap {
+            @include flexbox($items: center);
+
+            &__book-count {
+              letter-spacing: -0.3px;
+
+              &::after {
+                @include marginX(6px);
+
+                content: '';
+                display: inline-block;
+                width: 1px;
+                height: 11px;
+                background-color: $gray2;
+              }
+            }
+          }
+        }
+
+        &__book-detail-notice-wrap {
+          .notice-item {
+            @include paddingY(6px);
+            @include flexbox($items: center);
+
+            border-top: 1px solid $border-gray6;
+
+            &:last-child {
+              border-bottom: 1px solid $border-gray6;
+            }
+
+            .notice-title {
+              display: block;
+              width: 40px;
+              height: 18px;
+              border-radius: 2px;
+              font-size: rem(11px);
+              font-weight: 700;
+              line-height: 18px;
+              text-align: center;
+              margin-right: rem(16px);
+            }
+
+            .info-title {
+              @include fontSetup($weight: 700, $size: rem(14px), $height: 20px, $spacing: -0.7px);
+              @include paddingY(4px);
+
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              color: $font-gray5;
+            }
+
+            .schedule-title {
+              background: $bg-skyblue;
+              color: $font-skyblue;
+            }
+
+            .benefits-title {
+              background: $bg-green;
+              color: $font-green;
+            }
+
+            .event-title {
+              background: $bg-purple;
+              color: $font-purple;
+            }
+
+            .Wait-free-title {
+              background: $bg-blue;
+              color: $blue;
+            }
+
+            .benefits-info a,
+            .event-info {
+              @include flexbox($direction: column);
+
+              .info-text,
+              .info-event-more {
+                color: $font-gray2;
+                margin-top: rem(8px);
+                font-size: rem(12px);
+              }
+            }
+          }
+        }
+
+        &__benefits-Period {
+          position: relative;
+          display: block;
+          margin-top: rem(20px);
+          text-align: right;
+          color: $font-gray2;
+          font-size: rem(12px);
+
+          &::before {
+            content: '';
+            display: inline-block;
+            position: relative;
+            width: 4px;
+            height: 4px;
+            background-color: $font-gray2;
+            top: -2px;
+            left: -1px;
+          }
+        }
+
+        .first-episode {
+          width: 180px;
+          font-size: rem(15px);
+          border: 0;
+          outline: 0;
+          text-decoration: none;
+          box-sizing: border-box;
+          border-radius: 4px;
+          font-weight: 700;
+          line-height: 1em;
+          transition: background 0.2s, color 0.2s;
+          color: $white;
+          background: $blue;
+          border: 1px solid $border-blue;
+          font-size: rem(16px);
+          padding: rem(16px) rem(34px);
+          margin-top: rem(20px);
+
+          &:hover {
+            background: $border-blue;
+          }
+        }
+      }
+      // details-wrap
+    }
+    // body
+
+    &__footer {
+      @include flexbox;
+
+      margin-top: rem(40px);
+      padding: rem(16px) rem(26px);
+      border: solid 4px $gray4;
+      font-size: rem(12px);
+      color: $secondary-font;
+      letter-spacing: 1px;
+
+      .info-title {
+        display: inline-block;
+        min-width: 70px;
+        max-width: 70px;
+        padding-right: rem(8px);
+        font-weight: 700;
+        color: #525a61;
+      }
+
+      &__support-info {
+        margin-left: rem(100px);
+      }
+
+      &__metadata-info div,
+      &__support-info div {
+        margin: rem(4px) 0;
+      }
+    }
+  }
+
+  // books__series
+  &__series {
+    @include autoMargin;
+
+    max-width: 793px;
+    padding: 0 rem(29px);
+
+    &__buy-tab {
+      position: relative;
+      border-top: 2px solid $secondary-font;
+
+      // 대여하기 탭 & 리스트
+      &__rental {
+        &__title {
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-right: 1px solid $gray;
+        }
+      }
+
+      &__purchase {
+        &__title {
+          position: absolute;
+          top: 0;
+          right: 0;
+          border-left: 1px solid #ccc;
+        }
+      }
+
+      .tab-list {
+        // 시리즈 리스트 목록 전체 none
+        > * {
+          display: none;
+        }
+
+        //  시리즈 리스트 타이틀은 block
+        .tab-title {
+          display: block;
+          width: 50%;
+          height: 51px;
+          background: $gray5;
+          border-bottom: 1px solid $gray;
+          font-size: rem(15px);
+          font-weight: 700;
+          color: $my-font-recent;
+          text-align: center;
+          line-height: 51px;
+          cursor: pointer;
+
+          &:hover {
+            color: $blue;
+          }
+        }
+
+        // active 상태의 시리즈 리스트 block
+        &.active {
+          > * {
+            display: block;
+          }
+
+          // active 상태의 title 스타일
+          .tab-title {
+            background: $white;
+            border: none;
+          }
+
+          //  active 상태의 list-option block
+          .list-option {
+            display: flex;
+          }
+        }
+
+        // list-option
+        .list-option {
+          justify-content: space-between;
+          align-items: center;
+          margin-top: rem(51px);
+          padding: rem(10px) rem(20px) rem(10px) rem(10px);
+          border-bottom: 1px dotted #bbb;
+
+          // left
+          &__left {
+            @include flexbox($items: center);
+
+            .select-all {
+              @include flexbox($items: center);
+
+              cursor: pointer;
+              color: $border-gray7;
+              font-size: rem(14px);
+              font-weight: 700;
+              margin-right: rem(10px);
+              letter-spacing: -0.3px;
+            }
+
+            .alignment {
+              padding: rem(6px) rem(12px);
+              background: $white;
+              color: #63696e;
+              border: 1px solid $gray2;
+              box-shadow: 0 1px 1px 0 rgb(209 213 217 / 30%);
+              font-size: rem(12px);
+              border-radius: 4px;
+              font-weight: 700;
+              transition: background-color 0.2s, color 0.2s;
+
+              &:hover {
+                background: $border-gray2;
+              }
+            }
+          }
+
+          // right
+
+          &__right {
+            font-size: rem(12px);
+            font-weight: 700;
+
+            .info_volume {
+              color: $secondary-font;
+            }
+            .info_price {
+              color: $blue;
+            }
+
+            .cart {
+              padding: rem(6px) rem(12px);
+              background: $white;
+              color: $font-gray2;
+              border: 1px solid $gray2;
+              box-shadow: 0 1px 1px 0 rgb(209 213 217 / 30%);
+              border-radius: 4px;
+              transition: background-color 0.2s, color 0.2s;
+              font-weight: 700;
+              letter-spacing: -0.3px;
+
+              &:hover {
+                background: $border-gray2;
+              }
+            }
+
+            .rental {
+              padding: rem(6px) rem(12px);
+              color: $white;
+              background: $blue;
+              border: 1px solid $border-blue;
+              box-shadow: 0 1px 1px 0 rgb(209 213 217 / 30%);
+              border-radius: 4px;
+              transition: background-color 0.2s, color 0.2s;
+              font-weight: 700;
+              letter-spacing: -0.3px;
+
+              &:hover {
+                background: $border-blue;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__item {
+      &__wrap {
+        @include flexbox($justify: space-between, $items: center);
+
+        padding: rem(10px) rem(20px) rem(10px) rem(10px);
+        transition: background-color 0.2s;
+        cursor: pointer;
+        border-bottom: 1px solid $border-gray2;
+
+        &:hover {
+          background: #eef1f1;
+        }
+
+        &__left-position {
+          @include flexbox($items: center);
+
+          &__image {
+            max-width: 40px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-right: rem(12px);
+          }
+
+          &__info-wrap {
+            &__title-wrap {
+              @include flexbox($items: center);
+
+              &__badge {
+                padding: rem(1px) rem(3px);
+                font-size: rem(9px);
+                font-weight: 600;
+                border-radius: 3px;
+                color: $white;
+                background-color: $blue;
+                margin-right: rem(5px);
+              }
+
+              &__title {
+                color: $black;
+                font-size: rem(13px);
+                font-weight: 700;
+                letter-spacing: -0.3px;
+              }
+            }
+
+            &__description-wrap {
+              @include flexbox($items: center);
+
+              color: $secondary-font;
+              font-size: rem(12px);
+              margin-top: rem(4px);
+              font-weight: 400;
+
+              &__date {
+                &::after {
+                  content: '';
+                  display: inline-block;
+                  width: 0.0625rem;
+                  height: 0.6875rem;
+                  background-color: $gray2;
+                  margin: 0 rem(6px);
+                }
+              }
+            }
+          }
+        }
+
+        &__view-button {
+          padding: rem(6px) rem(12px);
+          background: $white;
+          color: $font-gray2;
+          border: 1px solid $gray2;
+          box-shadow: 0 1px 1px 0 rgb(209 213 217 / 30%);
+          border-radius: 4px;
+          transition: background-color 0.2s, color 0.2s;
+          font-weight: 700;
+          letter-spacing: -0.3px;
+
+          &:hover {
+            background: $border-gray2;
+          }
+        }
+      }
+    }
+
+    .view-all-button {
+      width: 100%;
+      margin-top: rem(10px);
+      font-size: rem(13px);
+      padding: rem(10px);
+      border-width: 2px;
+      background-color: $white;
+      transition: background-color 0.3s;
+      border: 2px solid $gray2;
+      border-radius: 4px;
+      font-weight: 700;
+      color: $font-gray2;
+
+      .bx {
+        font-size: rem(10px);
+        margin-left: rem(2px);
+      }
+
+      &:hover {
+        background-color: $border-gray2;
+      }
+    }
+  }
+
+  // books__keyword
+  &__keyword {
+    @include autoMargin;
+
+    max-width: 793px;
+    padding: rem(50px) rem(29px) 0;
+
+    &__list {
+      @include flexbox($wrap: wrap);
+
+      transition: background-color 0.2s;
+      margin-top: rem(15px);
+
+      &__item {
+        button {
+          @include paddingX(10px);
+
+          white-space: nowrap;
+          margin: 0 rem(10px) rem(15px) 0;
+          height: 30px;
+          border-radius: 3px;
+          background: $gray4;
+          border: 0;
+          font-weight: 700;
+          color: $secondary-font;
+
+          &:hover {
+            background: #c4e1f5;
+          }
+        }
+      }
+    }
+  }
+
+  // books__introduce
+  &__introduce {
+    @include autoMargin;
+    max-width: 793px;
+    padding: rem(50px) rem(29px) 0;
+
+    &__description {
+      margin-top: rem(15px);
+      font-size: rem(13px);
+      color: $my-font-recent;
+    }
+  }
+
+  // books__introduce
+  &__author {
+    @include autoMargin;
+
+    max-width: 793px;
+    padding: rem(50px) rem(29px) 0;
+
+    &__description {
+      margin-top: rem(15px);
+      font-size: rem(13px);
+      color: $my-font-recent;
+      line-height: 1.8;
+    }
+
+    &__representative-book {
+      margin-top: rem(20px);
+      border-top: 1px solid rgb(209, 204, 204);
+
+      &__title {
+        margin-top: rem(20px);
+        padding-left: rem(16px);
+        vertical-align: top;
+        font-size: rem(16px);
+        font-weight: 700;
+        color: $my-font-recent;
+      }
+
+      &__list {
+        @include flexbox($items: center);
+
+        margin-top: rem(20px);
+
+        &__item {
+          display: block;
+          margin: rem(15px) rem(15px);
+
+          img {
+            width: 90px;
+            height: 130px;
+            border-radius: 3px;
+          }
+        }
+      }
+    }
+  }
+
+  // books__review
+  &__review {
+    @include autoMargin;
+
+    max-width: 793px;
+    padding: rem(50px) rem(29px) 0;
+
+    &__review-wrap {
+      // score-wrap
+      &__score-wrap {
+        display: flex;
+
+        &__left {
+          width: 120px;
+          padding: rem(44px) 0 rem(20px) 0;
+          text-align: center;
+          margin-right: rem(10px);
+          flex-shrink: 0;
+
+          &__score {
+            display: block;
+            margin-top: rem(10px);
+            font-size: rem(35px);
+            color: $my-title;
+            font-weight: 700;
+          }
+
+          // score_graph
+
+          &__score_graph {
+            padding: rem(6px) 0 rem(10px) 0;
+
+            &__item {
+              @include flexCenter;
+
+              margin-top: rem(6px);
+              color: $font-gray2;
+              font-size: rem(12px);
+              font-weight: 700;
+
+              .bx {
+                font-size: rem(11px);
+              }
+
+              .star-bar-wrap {
+                display: inline-block;
+                width: 72px;
+                height: 8px;
+                background-color: $bg-bar-gr0;
+                margin-left: rem(6px);
+                box-shadow: inset 0 1px 1px 0 rgb(0 0 0 / 10%);
+
+                &__bar {
+                  display: block;
+                  width: 0;
+                  height: 8px;
+                  background: $font-skyblue linear-gradient(to bottom, $bg-bar-gr1, $bg-bar-gr2);
+                }
+              }
+            }
+
+            &__item:nth-child(1) {
+              .star-bar-wrap__bar {
+                width: 84%;
+              }
+            }
+            &__item:nth-child(2) {
+              .star-bar-wrap__bar {
+                width: 71%;
+              }
+            }
+            &__item:nth-child(3) {
+              .star-bar-wrap__bar {
+                width: 39%;
+              }
+            }
+            &__item:nth-child(4) {
+              .star-bar-wrap__bar {
+                width: 18%;
+              }
+            }
+            &__item:nth-child(5) {
+              .star-bar-wrap__bar {
+                width: 8%;
+              }
+            }
+          }
+        }
+
+        &__right {
+          flex-grow: 1;
+          margin-top: rem(14px);
+
+          &__starrate {
+            position: relative;
+            padding-bottom: rem(18px);
+
+            &__title {
+              display: block;
+              height: 42px;
+              text-align: center;
+              font-size: rem(18px);
+              color: #999;
+              font-weight: 700;
+              padding-top: rem(10px);
+              letter-spacing: -0.03em;
+            }
+
+            &__stars {
+              @include flexCenter;
+
+              margin-top: rem(5px);
+
+              &__star {
+                display: inline-block;
+                width: 50px;
+                height: 48px;
+
+                background: url('/assets/books/star.png') no-repeat;
+                background-position: 50% 0%;
+                background-size: 45px 90px;
+                cursor: pointer;
+
+                &.hovered {
+                  background-position: 0% 110%;
+                }
+
+                &.selected {
+                  background-position: 0% 110%;
+                  animation-duration: 0.7s;
+                  animation-timing-function: ease;
+                }
+              }
+            }
+          }
+
+          &__form-wrap {
+            &__form {
+              .review-textarea {
+                max-width: 605px;
+                min-width: 605px;
+                border: 2px solid $gray2;
+                border-radius: 5px;
+                box-sizing: border-box;
+                width: 100%;
+                height: 112px;
+                font-weight: 700;
+                font-size: rem(13px);
+                padding: rem(12px) rem(15px);
+                color: $font-gray3;
+
+                &:focus {
+                  outline-color: $border-gray8;
+                }
+                &:focus::placeholder {
+                  color: $gray2;
+                }
+              }
+
+              &__btn-wrap {
+                @include flexbox($justify: space-between, $items: center);
+
+                margin-top: rem(10px);
+
+                .write-tip-button {
+                  letter-spacing: -0.6px;
+                  border-radius: 4px;
+                  font-weight: 700;
+                  transition: background-color 0.2s, color 0.2s;
+                  color: $font-gray2;
+                  background: $white;
+                  border: 1px solid $gray2;
+                  box-shadow: 0 1px 1px 0 rgb(209 213 217 / 30%);
+                  font-size: rem(12px);
+                  padding: rem(8px) rem(18px);
+
+                  .bx {
+                    margin-right: rem(2px);
+                    font-size: rem(15px);
+                    transform: translate3d(0, 1.9px, 0);
+                  }
+
+                  &:hover {
+                    background: $border-gray2;
+                  }
+                }
+
+                .review-button {
+                  letter-spacing: -0.03em;
+                  border-radius: 4px;
+                  font-weight: 700;
+                  transition: background-color 0.2s, color 0.2s;
+                  color: $white;
+                  border: 1px solid $my-asset-arrow;
+                  box-shadow: 0 1px 1px 0 rgb(31 140 230 / 30%);
+                  font-size: rem(12px);
+                  padding: rem(8px) rem(18px);
+                  background: $blue;
+
+                  &.opacity {
+                    opacity: 0.5;
+                    cursor: default;
+                    pointer-events: none;
+
+                    &:hover {
+                      background: $blue;
+                    }
+                  }
+
+                  &:hover {
+                    background: $my-asset-arrow;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &__list-wrap {
+        margin-top: rem(40px);
+
+        &__title {
+          display: block;
+          border-bottom: 2px solid $gray2;
+          padding-bottom: rem(10px);
+          padding-left: rem(5px);
+          font-size: rem(15px);
+          font-weight: 700;
+          color: $border-gray7;
+        }
+
+        &__list {
+          &__item {
+            display: flex;
+            padding-top: rem(14px);
+            padding-bottom: rem(5px);
+            border-top: 1px solid $gray2;
+
+            &:first-child {
+              border-top: 0px;
+            }
+
+            &__review-info-wrap {
+              @include flexbox($direction: column);
+
+              flex-shrink: 0;
+              width: 115px;
+              padding-top: rem(3px);
+
+              &__star {
+                display: block;
+                margin-bottom: rem(10px);
+              }
+
+              &__reviewer {
+                font-size: rem(12px);
+                font-weight: 700;
+                color: $my-title;
+              }
+
+              &__date {
+                margin-top: rem(7px);
+                padding-bottom: rem(4px);
+                color: $font-gray2;
+                font-size: rem(12px);
+              }
+            }
+
+            &__content-wrap {
+              @include flexbox($direction: column, $justify: space-between);
+
+              flex-grow: 1;
+              padding-top: rem(6px);
+
+              &__content {
+                font-size: rem(13px);
+                color: $my-title;
+                width: 100%;
+                line-height: 1.5;
+                white-space: pre-wrap;
+                padding-bottom: rem(10px);
+              }
+
+              &__btn-wrap {
+                align-self: flex-end;
+                transition: background-color 0.2s, color 0.2s;
+                font-weight: 700;
+                font-size: rem(11px);
+
+                .bx {
+                  margin-right: rem(2px);
+                  font-size: rem(11px);
+                }
+
+                &__comment-btn {
+                  margin-right: rem(3px);
+                  padding: rem(6px) rem(14px);
+                  color: $font-gray2;
+                  background: $white;
+                  border: 1px solid $gray2;
+                  border-radius: 4px;
+
+                  &:hover {
+                    background: $border-gray2;
+                  }
+                }
+
+                &__like-btn {
+                  border-radius: 4px;
+                  color: $font-gray2;
+                  background: $white;
+                  border: 1px solid $gray2;
+                  padding: rem(6px) rem(14px);
+
+                  &:hover {
+                    background: $border-gray2;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // books__similar
+  &__similar {
+    @include autoMargin;
+
+    max-width: 793px;
+    padding: rem(50px) rem(29px) 0;
+
+    &__list {
+      @include flexbox($items: center, $wrap: wrap);
+
+      margin-top: rem(20px);
+
+      &__item {
+        display: block;
+        margin: rem(15px) rem(15px);
+
+        img {
+          width: 90px;
+          height: 130px;
+          border: 1px solid $gray2;
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+  // star
+  .star-bg {
+    position: relative;
+    width: 75px;
+    height: 15px;
+    display: inline-block;
+    background: url('/assets/books/emptyStar.svg') center center no-repeat;
+    background-size: 100% 100%;
+    margin-top: rem(3px);
+
+    &__stars {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      width: 0%;
+      height: 15px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        background: url('/assets/books/stars.svg') center center no-repeat;
+        background-size: 100% 100%;
+        left: 0;
+        top: 0;
+        width: 75px;
+        height: 15px;
+      }
+    }
+  }
+
+  // middle-title (아티클 중간제목들 스타일)
+  .middle-title {
+    display: block;
+    font-size: rem(20px);
+    color: $font-gray6;
+    font-weight: 700;
+    letter-spacing: -0.6px;
+    padding-bottom: rem(10px);
+    border-bottom: 2px solid $border-gray8;
+  }
+
+  //  커스텀 체크박스
+  input[type='checkbox'] {
+    display: none;
+  }
+  .checkbox {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border: 1px solid $gray2;
+    border-radius: 2px;
+    transition: background-color 0.2s, border-color 0.2s;
+    margin-top: rem(2px);
+    margin-right: rem(8px);
+  }
+  input[type='checkbox']:checked + .checkbox {
+    border-color: $my-asset-arrow;
+    background: $blue;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 2px;
+      display: block;
+      width: 6px;
+      height: 2px;
+      background-color: $white;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 6px;
+      right: 0;
+      display: block;
+      width: 12px;
+      height: 2px;
+      background-color: $white;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(100%);
+  }
+
+  50% {
+    transform: scale(110%);
+  }
+
+  100% {
+    transform: scale(100%);
+  }
+}
