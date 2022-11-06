@@ -5,8 +5,9 @@ let users = [
 
 const findUserByUserid = userid => users.find(user => user.userId === userid);
 
-const findUser = (userid, password) => console.log(userid, password);
-users.find(user => user.userId === userid && user.password === password);
+const findUser = (userid, password) => {
+  return users.find(user => user.userId === userid && user.password === password);
+};
 
 const createUser = (userId, password, birth, email) => {
   // users = [...users, { userid, password: bcrypt.hashSync(password, 10) }];
