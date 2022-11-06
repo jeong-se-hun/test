@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const users = require('./fake-data/users');
 
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
